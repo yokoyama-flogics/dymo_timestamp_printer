@@ -25,7 +25,7 @@ do
 		$HOME/bin/gen_datetime_label
 	fi
 
-	portval=`sudo cat /sys/class/gpio/gpio4/value`
+	portval=`sudo cat /sys/class/gpio/gpio$PORT/value`
 	echo before $portval
 
 	if [ $portval -eq 0 ]
@@ -34,13 +34,13 @@ do
 
 		# To avoid continuous print
 
-		portval=`sudo cat /sys/class/gpio/gpio4/value`
+		portval=`sudo cat /sys/class/gpio/gpio$PORT/value`
 		echo after $portval
 
 		while [ $portval -eq 0 ]
 		do
 			sleep 0.1
-			portval=`sudo cat /sys/class/gpio/gpio4/value`
+			portval=`sudo cat /sys/class/gpio/gpio$PORT/value`
 			echo after 2 $portval
 		done
 	fi
