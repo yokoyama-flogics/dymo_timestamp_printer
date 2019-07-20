@@ -1,0 +1,3 @@
+#!/bin/sh
+
+lpr -o ppi=300 -o media=w72h154.1 /tmp/printdatetime.png 

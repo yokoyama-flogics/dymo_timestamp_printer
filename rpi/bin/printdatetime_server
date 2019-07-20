@@ -1,0 +1,51 @@
+#!/bin/sh
+
+PORT=4
+
+getsec()
+{
+	return `date +%S`
+}
+
+echo $PORT > /sys/class/gpio/export
+
+getsec
+last_sec=$?
+
+$HOME/bin/gen_datetime_label
+
+while true
+do
+	getsec
+	sec=$?
+
+	if [ $sec -lt $last_sec ]
+	then
+		echo 'Generating label'
+		$HOME/bin/gen_datetime_label
+	fi
+
+	portval=`sudo cat /sys/class/gpio/gpio4/value`
+	echo before $portval
+
+	if [ $portval -eq 0 ]
+	then
+		$HOME/bin/lpr_datetime_label
+
+		# To avoid continuous print
+
+		portval=`sudo cat /sys/class/gpio/gpio4/value`
+		echo after $portval
+
+		while [ $portval -eq 0 ]
+		do
+			sleep 0.1
+			portval=`sudo cat /sys/class/gpio/gpio4/value`
+			echo after 2 $portval
+		done
+	fi
+
+	sleep 0.1
+
+	last_sec=$sec
+done

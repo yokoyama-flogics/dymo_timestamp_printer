@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ps auwx | fgrep -v grep | egrep -q '[^_]printdatetime_server'
+status=$?
+
+if [ $status -eq 1 ]
+then
+	echo Starting update_rrd
+	$HOME/bin/printdatetime_server 2>&1 > /dev/null &
+fi
+

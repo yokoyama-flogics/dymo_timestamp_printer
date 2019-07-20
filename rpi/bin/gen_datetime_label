@@ -1,0 +1,9 @@
+#!/bin/sh
+
+export TZ
+TZ=JST-9
+
+d=`date +%Y/%m/%d`
+t=`date +%H:%M`
+
+convert -font Helvetica -size 530x210 -pointsize 80 -gravity center label:$d'\n'$t /tmp/printdatetime.png
