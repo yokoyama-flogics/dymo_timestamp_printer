@@ -18,6 +18,8 @@ questions promptly.
 
 - [(Translated by Google) Next, I tried to create a timestamp (date) printer with Raspberry Pi](https://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https%3A%2F%2Fflogics.com%2Fwp%2Fja%2F2017%2F07%2F%25e7%25b6%259a%25e3%2583%25bbraspberry-pi-%25e3%2581%25a7%25e3%2580%2581%25e3%2582%25bf%25e3%2582%25a4%25e3%2583%25a0%25e3%2582%25b9%25e3%2582%25bf%25e3%2583%25b3%25e3%2583%2597%25ef%25bc%2588%25e6%2597%25a5%25e4%25bb%2598%25ef%25bc%2589%25e3%2583%2597%25e3%2583%25aa%25e3%2583%25b3%25e3%2582%25bf%25e3%2582%2592%2F)
 
+- [Dymo Label Printer CUPS Driver Troubleshooting](https://flogics.com/wp/ja/2023/02/dymo-cups-troubleshoot/)
+
 ## Files Explanation
 
 ### [rpi](./rpi)
@@ -51,7 +53,7 @@ Some examples.
 ## Some Note
 
 - Dymo Linux driver can be downloaded
-  [here](http://www.dymo.com/en-US/dymo-label-sdk-and-cups-drivers-for-linux-dymo-label-sdk-cups-linux-p--1).
+  [here](https://www.dymo-label-printers.co.uk/news/download-dymo-sdk-for-linux.html).
 
 - [This tutorial](http://www.penguintutor.com/linux/printing-cups) is
   quite helpful to understand how to set-up Dymo printer for Raspberry
